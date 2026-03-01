@@ -7,14 +7,21 @@ namespace Server.Items
     {
         None = 0,
         Iron = 1,
+        Rusty,
+        OldCopper,
         DullCopper,
         ShadowIron,
         Copper,
         Bronze,
         Gold,
+        Rose,
         Agapite,
+        Bloodrock,
+        Silver,
         Verite,
         Valorite,
+        Mytheril,
+        Blackrock,
 
         RegularLeather = 101,
         SpinedLeather,
@@ -49,7 +56,7 @@ namespace Server.Items
     public class CraftAttributeInfo
     {
         public static readonly CraftAttributeInfo Blank;
-        public static readonly CraftAttributeInfo DullCopper, ShadowIron, Copper, Bronze, Golden, Agapite, Verite, Valorite;
+        public static readonly CraftAttributeInfo Rusty, OldCopper, DullCopper, ShadowIron, Copper, Bronze, Golden, Rose, Agapite, Bloodrock, Silver, Verite, Valorite, Mytheril, Blackrock;
         public static readonly CraftAttributeInfo Spined, Horned, Barbed;
         public static readonly CraftAttributeInfo RedScales, YellowScales, BlackScales, GreenScales, WhiteScales, BlueScales;
         public static readonly CraftAttributeInfo OakWood, AshWood, YewWood, Heartwood, Bloodwood, Frostwood;
@@ -57,6 +64,42 @@ namespace Server.Items
         static CraftAttributeInfo()
         {
             Blank = new CraftAttributeInfo();
+
+            var rusty = Rusty = new CraftAttributeInfo();
+            rusty.ArmorPhysicalResist = 2;
+            rusty.ArmorDurability = -5;
+            rusty.WeaponDurability = -5;
+            rusty.WeaponPoisonDamage = 30;
+            rusty.RunicMinAttributes = 1;
+            rusty.RunicMaxAttributes = 2;
+            if (Core.ML)
+            {
+                rusty.RunicMinIntensity = 10;
+                rusty.RunicMaxIntensity = 100;
+            }
+            else
+            {
+                rusty.RunicMinIntensity = 5;
+                rusty.RunicMaxIntensity = 30;
+            }
+
+            var oldCopper = OldCopper = new CraftAttributeInfo();
+            oldCopper.ArmorPhysicalResist = 5;
+            oldCopper.ArmorColdResist = 2;
+            oldCopper.ArmorPoisonResist = 1;
+            oldCopper.WeaponEnergyDamage = 20;
+            oldCopper.RunicMinAttributes = 1;
+            oldCopper.RunicMaxAttributes = 2;
+            if (Core.ML)
+            {
+                oldCopper.RunicMinIntensity = 10;
+                oldCopper.RunicMaxIntensity = 100;
+            }
+            else
+            {
+                oldCopper.RunicMinIntensity = 5;
+                oldCopper.RunicMaxIntensity = 30;
+            }
 
             var dullCopper = DullCopper = new CraftAttributeInfo();
 
@@ -163,6 +206,28 @@ namespace Server.Items
                 golden.RunicMaxIntensity = 75;
             }
 
+            var rose = Rose = new CraftAttributeInfo();
+            rose.ArmorPhysicalResist = 1;
+            rose.ArmorFireResist = 3;
+            rose.ArmorEnergyResist = 1;
+            rose.ArmorLuck = 20;
+            rose.ArmorGoldIncrease = 20;
+            rose.WeaponLuck = 20;
+            rose.WeaponGoldIncrease = 20;
+            rose.WeaponFireDamage = 40;
+            rose.RunicMinAttributes = 3;
+            rose.RunicMaxAttributes = 4;
+            if (Core.ML)
+            {
+                rose.RunicMinIntensity = 65;
+                rose.RunicMaxIntensity = 100;
+            }
+            else
+            {
+                rose.RunicMinIntensity = 35;
+                rose.RunicMaxIntensity = 80;
+            }
+
             var agapite = Agapite = new CraftAttributeInfo();
 
             agapite.ArmorPhysicalResist = 2;
@@ -183,6 +248,47 @@ namespace Server.Items
             {
                 agapite.RunicMinIntensity = 40;
                 agapite.RunicMaxIntensity = 80;
+            }
+
+            var bloodrock = Bloodrock = new CraftAttributeInfo();
+            bloodrock.ArmorPhysicalResist = 7;
+            bloodrock.ArmorFireResist = 3;
+            bloodrock.ArmorColdResist = 3;
+            bloodrock.ArmorEnergyResist = 7;
+            bloodrock.ArmorDurability = 50;
+            bloodrock.WeaponDurability = 50;
+            bloodrock.WeaponChaosDamage = 25;
+            bloodrock.RunicMinAttributes = 4;
+            bloodrock.RunicMaxAttributes = 4;
+            if (Core.ML)
+            {
+                bloodrock.RunicMinIntensity = 65;
+                bloodrock.RunicMaxIntensity = 100;
+            }
+            else
+            {
+                bloodrock.RunicMinIntensity = 45;
+                bloodrock.RunicMaxIntensity = 85;
+            }
+
+
+            var silver = Silver = new CraftAttributeInfo();
+            silver.ArmorPhysicalResist = 3;
+            silver.ArmorPoisonResist = 8;
+            silver.ArmorColdResist = 5;
+            silver.WeaponColdDamage = 30;
+            silver.WeaponEnergyDamage = 30;
+            silver.RunicMinAttributes = 4;
+            silver.RunicMaxAttributes = 4;
+            if (Core.ML)
+            {
+                silver.RunicMinIntensity = 65;
+                silver.RunicMaxIntensity = 100;
+            }
+            else
+            {
+                silver.RunicMinIntensity = 45;
+                silver.RunicMaxIntensity = 85;
             }
 
             var verite = Verite = new CraftAttributeInfo();
@@ -230,6 +336,56 @@ namespace Server.Items
                 valorite.RunicMinIntensity = 50;
                 valorite.RunicMaxIntensity = 100;
             }
+
+            var mytheril = Mytheril = new CraftAttributeInfo();
+
+            mytheril.ArmorPhysicalResist = 8;
+            mytheril.ArmorColdResist = 5;
+            mytheril.ArmorEnergyResist = 5;
+            mytheril.ArmorDurability = 100;
+            mytheril.ArmorLowerRequirements = 20;
+            mytheril.WeaponColdDamage = 30;
+            mytheril.WeaponEnergyDamage = 40;
+            mytheril.WeaponDirectDamage = 10;
+            mytheril.WeaponDurability = 100;
+            mytheril.WeaponLowerRequirements = 20;
+            mytheril.RunicMinAttributes = 5;
+            mytheril.RunicMaxAttributes = 6;
+            if (Core.ML)
+            {
+                mytheril.RunicMinIntensity = 90;
+                mytheril.RunicMaxIntensity = 100;
+            }
+            else
+            {
+                mytheril.RunicMinIntensity = 60;
+                mytheril.RunicMaxIntensity = 100;
+            }
+
+            var blackrock = Blackrock = new CraftAttributeInfo();
+
+            blackrock.ArmorPhysicalResist = 7;
+            blackrock.ArmorColdResist = 7;
+            blackrock.ArmorFireResist = 7;
+            blackrock.ArmorPoisonResist = 7;
+            blackrock.ArmorEnergyResist = 7;
+            blackrock.ArmorDurability = 300;
+            blackrock.WeaponDurability = 300;
+            blackrock.WeaponChaosDamage = 50;
+            blackrock.WeaponDirectDamage = 20;
+            blackrock.RunicMinAttributes = 5;
+            blackrock.RunicMaxAttributes = 6;
+            if (Core.ML)
+            {
+                blackrock.RunicMinIntensity = 90;
+                blackrock.RunicMaxIntensity = 100;
+            }
+            else
+            {
+                blackrock.RunicMinIntensity = 70;
+                blackrock.RunicMaxIntensity = 100;
+            }
+
 
             var spined = Spined = new CraftAttributeInfo();
 
@@ -428,6 +584,26 @@ namespace Server.Items
                 typeof(Granite)
             ),
             new(
+                0x750,
+                0,
+                "Rusty",
+                CraftAttributeInfo.Rusty,
+                CraftResource.Rusty,
+                typeof(RustyIngot),
+                typeof(RustyOre),
+                typeof(RustyGranite)
+            ),
+            new(
+                0x590,
+                0,
+                "Old Copper",
+                CraftAttributeInfo.OldCopper,
+                CraftResource.OldCopper,
+                typeof(OldCopperIngot),
+                typeof(OldCopperOre),
+                typeof(OldCopperGranite)
+            ),
+            new(
                 0x973,
                 1053108,
                 "Dull Copper",
@@ -478,6 +654,16 @@ namespace Server.Items
                 typeof(GoldGranite)
             ),
             new(
+                0x665,
+                0,
+                "Rose",
+                CraftAttributeInfo.Rose,
+                CraftResource.Rose,
+                typeof(RoseIngot),
+                typeof(RoseOre),
+                typeof(RoseGranite)
+            ),
+            new(
                 0x979,
                 1053103,
                 "Agapite",
@@ -486,6 +672,26 @@ namespace Server.Items
                 typeof(AgapiteIngot),
                 typeof(AgapiteOre),
                 typeof(AgapiteGranite)
+            ),
+            new(
+                0x4C2,
+                0,
+                "Bloodrock",
+                CraftAttributeInfo.Bloodrock,
+                CraftResource.Bloodrock,
+                typeof(BloodrockIngot),
+                typeof(BloodrockOre),
+                typeof(BloodrockGranite)
+            ),
+                new(
+                0x482,
+                0,
+                "Silver",
+                CraftAttributeInfo.Silver,
+                CraftResource.Silver,
+                typeof(SilverIngot),
+                typeof(SilverOre),
+                typeof(SilverGranite)
             ),
             new(
                 0x89F,
@@ -506,6 +712,26 @@ namespace Server.Items
                 typeof(ValoriteIngot),
                 typeof(ValoriteOre),
                 typeof(ValoriteGranite)
+            ),
+            new(
+                0x52D,
+                0,
+                "Mytheril",
+                CraftAttributeInfo.Mytheril,
+                CraftResource.Mytheril,
+                typeof(MytherilIngot),
+                typeof(MytherilOre),
+                typeof(MytherilGranite)
+            ),
+            new(
+                0x455,
+                0,
+                "Blackrock",
+                CraftAttributeInfo.Blackrock,
+                CraftResource.Blackrock,
+                typeof(BlackrockIngot),
+                typeof(BlackrockOre),
+                typeof(BlackrockGranite)
             )
         };
 
@@ -778,7 +1004,7 @@ namespace Server.Items
         public static CraftResourceType GetType(CraftResource resource) =>
             resource switch
             {
-                >= CraftResource.Iron and <= CraftResource.Valorite                => CraftResourceType.Metal,
+                >= CraftResource.Iron and <= CraftResource.Blackrock               => CraftResourceType.Metal,
                 >= CraftResource.RegularLeather and <= CraftResource.BarbedLeather => CraftResourceType.Leather,
                 >= CraftResource.RedScales and <= CraftResource.BlueScales         => CraftResourceType.Scales,
                 >= CraftResource.RegularWood and <= CraftResource.Frostwood        => CraftResourceType.Wood,

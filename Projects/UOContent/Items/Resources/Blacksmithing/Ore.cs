@@ -175,14 +175,21 @@ public abstract partial class BaseOre : Item
             {
                 var difficulty = m_Ore._resource switch
                 {
+                    CraftResource.Rusty      => 50.0,
+                    CraftResource.OldCopper  => 60.0,
                     CraftResource.DullCopper => 65.0,
                     CraftResource.ShadowIron => 70.0,
                     CraftResource.Copper     => 75.0,
                     CraftResource.Bronze     => 80.0,
                     CraftResource.Gold       => 85.0,
+                    CraftResource.Rose       => 87.0,
                     CraftResource.Agapite    => 90.0,
+                    CraftResource.Bloodrock  => 93.0,
+                    CraftResource.Silver     => 95.0,
                     CraftResource.Verite     => 95.0,
                     CraftResource.Valorite   => 99.0,
+                    CraftResource.Mytheril   => 99.5,
+                    CraftResource.Blackrock  => 100.0,
                     _                        => 50.0
                 };
 
@@ -370,6 +377,28 @@ public partial class IronOre : BaseOre
 }
 
 [SerializationGenerator(0, false)]
+public partial class RustyOre : BaseOre
+{
+    [Constructible]
+    public RustyOre(int amount = 1) : base(CraftResource.Rusty, amount)
+    {
+    }
+
+    public override BaseIngot GetIngot() => new RustyIngot();
+}
+
+[SerializationGenerator(0, false)]
+public partial class OldCopperOre : BaseOre
+{
+    [Constructible]
+    public OldCopperOre(int amount = 1) : base(CraftResource.OldCopper, amount)
+    {
+    }
+
+    public override BaseIngot GetIngot() => new OldCopperIngot();
+}
+
+[SerializationGenerator(0, false)]
 public partial class DullCopperOre : BaseOre
 {
     [Constructible]
@@ -425,6 +454,17 @@ public partial class GoldOre : BaseOre
 }
 
 [SerializationGenerator(0, false)]
+public partial class RoseOre : BaseOre
+{
+    [Constructible]
+    public RoseOre(int amount = 1) : base(CraftResource.Rose, amount)
+    {
+    }
+
+    public override BaseIngot GetIngot() => new RoseIngot();
+}
+
+[SerializationGenerator(0, false)]
 public partial class AgapiteOre : BaseOre
 {
     [Constructible]
@@ -433,6 +473,28 @@ public partial class AgapiteOre : BaseOre
     }
 
     public override BaseIngot GetIngot() => new AgapiteIngot();
+}
+
+[SerializationGenerator(0, false)]
+public partial class BloodrockOre : BaseOre
+{
+    [Constructible]
+    public BloodrockOre(int amount = 1) : base(CraftResource.Bloodrock, amount)
+    {
+    }
+
+    public override BaseIngot GetIngot() => new BloodrockIngot();
+}
+
+[SerializationGenerator(0, false)]
+public partial class SilverOre : BaseOre
+{
+    [Constructible]
+    public SilverOre(int amount = 1) : base(CraftResource.Silver, amount)
+    {
+    }
+
+    public override BaseIngot GetIngot() => new SilverIngot();
 }
 
 [SerializationGenerator(0, false)]
@@ -455,4 +517,26 @@ public partial class ValoriteOre : BaseOre
     }
 
     public override BaseIngot GetIngot() => new ValoriteIngot();
+}
+
+[SerializationGenerator(0, false)]
+public partial class MytherilOre : BaseOre
+{
+    [Constructible]
+    public MytherilOre(int amount = 1) : base(CraftResource.Mytheril, amount)
+    {
+    }
+
+    public override BaseIngot GetIngot() => new MytherilIngot();
+}
+
+[SerializationGenerator(0, false)]
+public partial class BlackrockOre : BaseOre
+{
+    [Constructible]
+    public BlackrockOre(int amount = 1) : base(CraftResource.Blackrock, amount)
+    {
+    }
+
+    public override BaseIngot GetIngot() => new BlackrockIngot();
 }

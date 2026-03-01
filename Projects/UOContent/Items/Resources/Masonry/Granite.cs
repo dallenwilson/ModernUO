@@ -70,6 +70,24 @@ public partial class Granite : BaseGranite
 }
 
 [SerializationGenerator(0, false)]
+public partial class RustyGranite : BaseGranite
+{
+    [Constructible]
+    public RustyGranite() : base(CraftResource.Rusty)
+    {
+    }
+}
+
+[SerializationGenerator(0, false)]
+public partial class OldCopperGranite : BaseGranite
+{
+    [Constructible]
+    public OldCopperGranite() : base(CraftResource.OldCopper)
+    {
+    }
+}
+
+[SerializationGenerator(0, false)]
 public partial class DullCopperGranite : BaseGranite
 {
     [Constructible]
@@ -115,10 +133,37 @@ public partial class GoldGranite : BaseGranite
 }
 
 [SerializationGenerator(0, false)]
+public partial class RoseGranite : BaseGranite
+{
+    [Constructible]
+    public RoseGranite() : base(CraftResource.Rose)
+    {
+    }
+}
+
+[SerializationGenerator(0, false)]
 public partial class AgapiteGranite : BaseGranite
 {
     [Constructible]
     public AgapiteGranite() : base(CraftResource.Agapite)
+    {
+    }
+}
+
+[SerializationGenerator(0, false)]
+public partial class BloodrockGranite : BaseGranite
+{
+    [Constructible]
+    public BloodrockGranite() : base(CraftResource.Bloodrock)
+    {
+    }
+}
+
+[SerializationGenerator(0, false)]
+public partial class SilverGranite : BaseGranite
+{
+    [Constructible]
+    public SilverGranite() : base(CraftResource.Silver)
     {
     }
 }
@@ -137,6 +182,24 @@ public partial class ValoriteGranite : BaseGranite
 {
     [Constructible]
     public ValoriteGranite() : base(CraftResource.Valorite)
+    {
+    }
+}
+
+[SerializationGenerator(0, false)]
+public partial class MytherilGranite : BaseGranite
+{
+    [Constructible]
+    public MytherilGranite() : base(CraftResource.Mytheril)
+    {
+    }
+}
+
+[SerializationGenerator(0, false)]
+public partial class BlackrockGranite : BaseGranite
+{
+    [Constructible]
+    public BlackrockGranite() : base(CraftResource.Blackrock)
     {
     }
 }

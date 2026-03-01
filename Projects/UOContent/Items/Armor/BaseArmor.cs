@@ -326,14 +326,21 @@ namespace Server.Items
                 {
                     ar += _resource switch
                     {
+                        CraftResource.Rusty         => 1,
+                        CraftResource.OldCopper     => 2,
                         CraftResource.DullCopper    => 2,
                         CraftResource.ShadowIron    => 4,
                         CraftResource.Copper        => 6,
                         CraftResource.Bronze        => 8,
                         CraftResource.Gold          => 10,
+                        CraftResource.Rose          => 11,
                         CraftResource.Agapite       => 12,
+                        CraftResource.Bloodrock     => 13,
+                        CraftResource.Silver        => 13,
                         CraftResource.Verite        => 14,
                         CraftResource.Valorite      => 16,
+                        CraftResource.Mytheril      => 17,
+                        CraftResource.Blackrock     => 18,
                         CraftResource.SpinedLeather => 10,
                         CraftResource.HornedLeather => 13,
                         CraftResource.BarbedLeather => 16,

@@ -99,6 +99,26 @@ public partial class IronIngot : BaseIngot
 
 [SerializationGenerator(0, false)]
 [Flippable(0x1BF2, 0x1BEF)]
+public partial class RustyIngot : BaseIngot
+{
+    [Constructible]
+    public RustyIngot(int amount = 1) : base(CraftResource.Rusty, amount)
+    {
+    }
+}
+
+[SerializationGenerator(0, false)]
+[Flippable(0x1BF2, 0x1BEF)]
+public partial class OldCopperIngot : BaseIngot
+{
+    [Constructible]
+    public OldCopperIngot(int amount = 1) : base(CraftResource.OldCopper, amount)
+    {
+    }
+}
+
+[SerializationGenerator(0, false)]
+[Flippable(0x1BF2, 0x1BEF)]
 public partial class DullCopperIngot : BaseIngot
 {
     [Constructible]
@@ -149,10 +169,40 @@ public partial class GoldIngot : BaseIngot
 
 [SerializationGenerator(0, false)]
 [Flippable(0x1BF2, 0x1BEF)]
+public partial class RoseIngot : BaseIngot
+{
+    [Constructible]
+    public RoseIngot(int amount = 1) : base(CraftResource.Rose, amount)
+    {
+    }
+}
+
+[SerializationGenerator(0, false)]
+[Flippable(0x1BF2, 0x1BEF)]
 public partial class AgapiteIngot : BaseIngot
 {
     [Constructible]
     public AgapiteIngot(int amount = 1) : base(CraftResource.Agapite, amount)
+    {
+    }
+}
+
+[SerializationGenerator(0, false)]
+[Flippable(0x1BF2, 0x1BEF)]
+public partial class BloodrockIngot : BaseIngot
+{
+    [Constructible]
+    public BloodrockIngot(int amount = 1) : base(CraftResource.Bloodrock, amount)
+    {
+    }
+}
+
+[SerializationGenerator(0, false)]
+[Flippable(0x1BF2, 0x1BEF)]
+public partial class SilverIngot : BaseIngot
+{
+    [Constructible]
+    public SilverIngot(int amount = 1) : base(CraftResource.Silver, amount)
     {
     }
 }
@@ -173,6 +223,26 @@ public partial class ValoriteIngot : BaseIngot
 {
     [Constructible]
     public ValoriteIngot(int amount = 1) : base(CraftResource.Valorite, amount)
+    {
+    }
+}
+
+[SerializationGenerator(0, false)]
+[Flippable(0x1BF2, 0x1BEF)]
+public partial class MytherilIngot : BaseIngot
+{
+    [Constructible]
+    public MytherilIngot(int amount = 1) : base(CraftResource.Mytheril, amount)
+    {
+    }
+}
+
+[SerializationGenerator(0, false)]
+[Flippable(0x1BF2, 0x1BEF)]
+public partial class BlackrockIngot : BaseIngot
+{
+    [Constructible]
+    public BlackrockIngot(int amount = 1) : base(CraftResource.Blackrock, amount)
     {
     }
 }

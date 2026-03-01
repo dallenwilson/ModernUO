@@ -729,6 +729,11 @@ public abstract partial class BaseWeapon
 
                 switch (thisResource)
                 {
+                    case CraftResource.OldCopper:
+                        {
+                            DurabilityLevel = WeaponDurabilityLevel.Durable;
+                            break;
+                        }
                     case CraftResource.DullCopper:
                         {
                             DurabilityLevel = WeaponDurabilityLevel.Durable;
@@ -762,11 +767,32 @@ public abstract partial class BaseWeapon
                             AccuracyLevel = WeaponAccuracyLevel.Eminently;
                             break;
                         }
+                    case CraftResource.Rose:
+                        {
+                            DurabilityLevel = WeaponDurabilityLevel.Indestructible;
+                            DamageLevel = WeaponDamageLevel.Force;
+                            AccuracyLevel = WeaponAccuracyLevel.Eminently;
+                            break;
+                        }
                     case CraftResource.Agapite:
                         {
                             DurabilityLevel = WeaponDurabilityLevel.Indestructible;
                             DamageLevel = WeaponDamageLevel.Power;
                             AccuracyLevel = WeaponAccuracyLevel.Eminently;
+                            break;
+                        }
+                    case CraftResource.Bloodrock:
+                        {
+                            DurabilityLevel = WeaponDurabilityLevel.Indestructible;
+                            DamageLevel = WeaponDamageLevel.Power;
+                            AccuracyLevel = WeaponAccuracyLevel.Eminently;
+                            break;
+                        }
+                    case CraftResource.Silver:
+                        {
+                            DurabilityLevel = WeaponDurabilityLevel.Indestructible;
+                            DamageLevel = WeaponDamageLevel.Power;
+                            AccuracyLevel = WeaponAccuracyLevel.Exceedingly;
                             break;
                         }
                     case CraftResource.Verite:
@@ -777,6 +803,20 @@ public abstract partial class BaseWeapon
                             break;
                         }
                     case CraftResource.Valorite:
+                        {
+                            DurabilityLevel = WeaponDurabilityLevel.Indestructible;
+                            DamageLevel = WeaponDamageLevel.Vanq;
+                            AccuracyLevel = WeaponAccuracyLevel.Supremely;
+                            break;
+                        }
+                    case CraftResource.Mytheril:
+                        {
+                            DurabilityLevel = WeaponDurabilityLevel.Indestructible;
+                            DamageLevel = WeaponDamageLevel.Vanq;
+                            AccuracyLevel = WeaponAccuracyLevel.Supremely;
+                            break;
+                        }
+                    case CraftResource.Blackrock:
                         {
                             DurabilityLevel = WeaponDurabilityLevel.Indestructible;
                             DamageLevel = WeaponDamageLevel.Vanq;

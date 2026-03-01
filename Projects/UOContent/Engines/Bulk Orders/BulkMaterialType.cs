@@ -6,14 +6,21 @@ namespace Server.Engines.BulkOrders
     public enum BulkMaterialType
     {
         None,
+        Rusty,
+        OldCopper,
         DullCopper,
         ShadowIron,
         Copper,
         Bronze,
         Gold,
+        Rose,
         Agapite,
+        Bloodrock,
+        Silver,
         Verite,
         Valorite,
+        Mytheril,
+        Blackrock,
         Spined,
         Horned,
         Barbed

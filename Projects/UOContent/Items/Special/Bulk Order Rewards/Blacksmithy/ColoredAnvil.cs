@@ -12,7 +12,7 @@ public partial class ColoredAnvil : Item
     public ColoredAnvil() : base(0xFAF)
     {
         // TODO: Color weighted by rarity?
-        Hue = CraftResources.GetRandomResource(CraftResource.DullCopper, CraftResource.Valorite)?.Hue ?? 0;
+        Hue = CraftResources.GetRandomResource(CraftResource.Rusty, CraftResource.Blackrock)?.Hue ?? 0;
     }
 
     public override double DefaultWeight => 20.0;

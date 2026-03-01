@@ -112,92 +112,42 @@ namespace Server.Engines.Harvest
 
             HarvestResource[] res =
             {
-                new(00.0, 00.0, 100.0, 1007072, typeof(IronOre), typeof(Granite)),
-                new(
-                    65.0,
-                    25.0,
-                    105.0,
-                    1007073,
-                    typeof(DullCopperOre),
-                    typeof(DullCopperGranite),
-                    typeof(DullCopperElemental)
-                ),
-                new(
-                    70.0,
-                    30.0,
-                    110.0,
-                    1007074,
-                    typeof(ShadowIronOre),
-                    typeof(ShadowIronGranite),
-                    typeof(ShadowIronElemental)
-                ),
-                new(
-                    75.0,
-                    35.0,
-                    115.0,
-                    1007075,
-                    typeof(CopperOre),
-                    typeof(CopperGranite),
-                    typeof(CopperElemental)
-                ),
-                new(
-                    80.0,
-                    40.0,
-                    120.0,
-                    1007076,
-                    typeof(BronzeOre),
-                    typeof(BronzeGranite),
-                    typeof(BronzeElemental)
-                ),
-                new(
-                    85.0,
-                    45.0,
-                    125.0,
-                    1007077,
-                    typeof(GoldOre),
-                    typeof(GoldGranite),
-                    typeof(GoldenElemental)
-                ),
-                new(
-                    90.0,
-                    50.0,
-                    130.0,
-                    1007078,
-                    typeof(AgapiteOre),
-                    typeof(AgapiteGranite),
-                    typeof(AgapiteElemental)
-                ),
-                new(
-                    95.0,
-                    55.0,
-                    135.0,
-                    1007079,
-                    typeof(VeriteOre),
-                    typeof(VeriteGranite),
-                    typeof(VeriteElemental)
-                ),
-                new(
-                    99.0,
-                    59.0,
-                    139.0,
-                    1007080,
-                    typeof(ValoriteOre),
-                    typeof(ValoriteGranite),
-                    typeof(ValoriteElemental)
-                )
+/* 00 */        new(00.0, 00.0, 100.0, 1007072, typeof(IronOre), typeof(Granite)),
+/* 01 */        new(50.0, 10.0, 90.0, 503044, typeof(RustyOre),typeof(RustyGranite),typeof(RustyElemental)),
+/* 02 */        new(60.0, 20.0, 100.0, 503044, typeof(OldCopperOre), typeof(OldCopperGranite), typeof(OldCopperElemental)),
+/* 03 */        new(65.0, 25.0, 105.0, 1007073, typeof(DullCopperOre), typeof(DullCopperGranite), typeof(DullCopperElemental)),
+/* 04 */        new(70.0, 30.0, 110.0, 1007074, typeof(ShadowIronOre), typeof(ShadowIronGranite), typeof(ShadowIronElemental)),
+/* 05 */        new(75.0, 35.0, 115.0, 1007075, typeof(CopperOre), typeof(CopperGranite), typeof(CopperElemental)),
+/* 06 */        new(80.0, 40.0, 120.0, 1007076, typeof(BronzeOre), typeof(BronzeGranite), typeof(BronzeElemental)),
+/* 07 */        new(85.0, 45.0, 125.0, 1007077, typeof(GoldOre), typeof(GoldGranite), typeof(GoldenElemental)),
+/* 08 */        new(87.0, 47.0, 127.0, 503044, typeof(RoseOre), typeof(RoseGranite), typeof(RoseElemental)),
+/* 09 */        new(90.0, 50.0, 130.0, 1007078, typeof(AgapiteOre), typeof(AgapiteGranite), typeof(AgapiteElemental)),
+/* 10 */        new(93.0, 53.0, 133.0, 503044, typeof(BloodrockOre), typeof(BloodrockGranite), typeof(BloodrockElemental)),
+/* 11 */        new(95.0, 55.0, 135.0, 503044, typeof(SilverOre), typeof(SilverGranite), typeof(SilverElemental)),
+/* 12 */        new(95.0, 55.0, 135.0, 1007079, typeof(VeriteOre), typeof(VeriteGranite), typeof(VeriteElemental)),
+/* 13 */        new(99.0, 59.0, 139.0, 1007080, typeof(ValoriteOre), typeof(ValoriteGranite), typeof(ValoriteElemental)),
+/* 14 */        new(99.5, 59.5, 135.9, 503044, typeof(MytherilOre), typeof(MytherilGranite), typeof(MytherilElemental)),
+/* 15 */        new(100.0, 60.0, 140.0, 503044, typeof(BlackrockOre), typeof(BlackrockGranite), typeof(BlackrockElemental))
             };
 
             HarvestVein[] veins =
             {
-                new(496, 0.0, res[0], null),   // Iron
-                new(112, 0.5, res[1], res[0]), // Dull Copper
-                new(098, 0.5, res[2], res[0]), // Shadow Iron
-                new(084, 0.5, res[3], res[0]), // Copper
-                new(070, 0.5, res[4], res[0]), // Bronze
-                new(056, 0.5, res[5], res[0]), // Gold
-                new(042, 0.5, res[6], res[0]), // Agapite
-                new(028, 0.5, res[7], res[0]), // Verite
-                new(014, 0.5, res[8], res[0])  // Valorite
+/* 490 */       new(450, 0.0, res[0], null),    // Iron
+/* 000 */       new(050, 0.5, res[1], res[0]),  // Rusty
+/* 000 */       new(050, 0.5, res[2], res[0]),  // Old Copper
+/* 112 */       new(070, 0.5, res[3], res[0]),  // Dull Copper
+/* 098 */       new(058, 0.5, res[4], res[0]),  // Shadow Iron
+/* 084 */       new(065, 0.5, res[5], res[0]),  // Copper
+/* 070 */       new(060, 0.5, res[6], res[0]),  // Bronze
+/* 056 */       new(046, 0.5, res[7], res[0]),  // Gold
+/* 000 */       new(030, 0.5, res[8], res[0]),  // Rose
+/* 042 */       new(032, 0.5, res[9], res[0]),  // Agapite
+/* 000 */       new(020, 0.5, res[10], res[0]), // Bloodrock
+/* 000 */       new(025, 0.5, res[11], res[0]), // Silver
+/* 028 */       new(020, 0.5, res[12], res[0]), // Verite
+/* 014 */       new(010, 0.5, res[13], res[0]), // Valorite
+/* 000 */       new(009, 0.5, res[14], res[0]), // Mytheril
+/* 000 */       new(005, 0.5, res[15], res[0])  // Blackrock
             };
 
             OreAndStone.Resources = res;

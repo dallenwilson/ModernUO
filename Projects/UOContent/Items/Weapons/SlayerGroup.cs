@@ -141,7 +141,14 @@ namespace Server.Items
                 typeof(ValoriteElemental),
                 typeof(VeriteElemental),
                 typeof(WaterElemental),
-                typeof(SummonedWaterElemental)
+                typeof(SummonedWaterElemental),
+                typeof(RustyElemental),
+                typeof(OldCopperElemental),
+                typeof(RoseElemental),
+                typeof(BloodrockElemental),
+                typeof(SilverElemental),
+                typeof(MytherilElemental),
+                typeof(BlackrockElemental)
             );
             elemental.Entries = new[]
             {

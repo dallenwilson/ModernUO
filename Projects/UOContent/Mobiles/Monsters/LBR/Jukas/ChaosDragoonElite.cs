@@ -86,17 +86,24 @@ namespace Server.Mobiles
                 }
             );
 
-            res = Utility.Random(9) switch
+            res = Utility.Random(15) switch
             {
-                0 => CraftResource.DullCopper,
-                1 => CraftResource.ShadowIron,
-                2 => CraftResource.Copper,
-                3 => CraftResource.Bronze,
-                4 => CraftResource.Gold,
-                5 => CraftResource.Agapite,
-                6 => CraftResource.Verite,
-                7 => CraftResource.Valorite,
-                _ => CraftResource.Iron // 8
+                0  => CraftResource.Rusty,
+                1  => CraftResource.OldCopper,
+                2  => CraftResource.DullCopper,
+                3  => CraftResource.ShadowIron,
+                4  => CraftResource.Copper,
+                5  => CraftResource.Bronze,
+                6  => CraftResource.Gold,
+                7  => CraftResource.Rose,
+                8  => CraftResource.Agapite,
+                9  => CraftResource.Bloodrock,
+                10 => CraftResource.Silver,
+                11 => CraftResource.Verite,
+                12 => CraftResource.Valorite,
+                13 => CraftResource.Mytheril,
+                14 => CraftResource.Blackrock,
+                _  => CraftResource.Iron // 15
             };
 
             var mt = new SwampDragon { HasBarding = true, BardingResource = res };

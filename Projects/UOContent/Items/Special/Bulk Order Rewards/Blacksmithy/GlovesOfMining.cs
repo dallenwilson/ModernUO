@@ -108,7 +108,7 @@ public abstract partial class BaseGlovesOfMining : BaseArmor
         _bonus = bonus;
 
         // TODO: Color weighted by rarity?
-        Hue = CraftResources.GetRandomResource(CraftResource.DullCopper, CraftResource.Valorite)?.Hue ?? 0;
+        Hue = CraftResources.GetRandomResource(CraftResource.Rusty, CraftResource.Blackrock)?.Hue ?? 0;
     }
 
     [SerializableProperty(0)]

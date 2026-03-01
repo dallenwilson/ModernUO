@@ -77,14 +77,21 @@ namespace Server.Engines.Craft
 
                     var difficulty = resource switch
                     {
+                        CraftResource.Rusty      => 50.0,
+                        CraftResource.OldCopper  => 60.0,
                         CraftResource.DullCopper => 65.0,
                         CraftResource.ShadowIron => 70.0,
                         CraftResource.Copper     => 75.0,
                         CraftResource.Bronze     => 80.0,
                         CraftResource.Gold       => 85.0,
+                        CraftResource.Rose       => 87.0,
                         CraftResource.Agapite    => 90.0,
+                        CraftResource.Bloodrock  => 93.0,
+                        CraftResource.Silver     => 95.0,
                         CraftResource.Verite     => 95.0,
                         CraftResource.Valorite   => 99.0,
+                        CraftResource.Mytheril   => 99.5,
+                        CraftResource.Blackrock  => 100.0,
                         _                        => 0.0
                     };
 

@@ -58,7 +58,9 @@ public class AnimateDeadSpell : NecromancerSpell, ITargetingSpell<Item>
                 typeof(ValoriteElemental), typeof(VeriteElemental), typeof(PoisonElemental),
                 typeof(FireElemental), typeof(SummonedFireElemental), typeof(SnowElemental),
                 typeof(AirElemental), typeof(SummonedAirElemental), typeof(WaterElemental),
-                typeof(SummonedAirElemental), typeof(AcidElemental)
+                typeof(SummonedAirElemental), typeof(AcidElemental), typeof(RustyElemental),
+                typeof(OldCopperElemental), typeof(RoseElemental), typeof(BloodrockElemental),
+                typeof(SilverElemental), typeof(MytherilElemental), typeof(BlackrockElemental)
             ],
             [
                 new SummonEntry(5000, typeof(WailingBanshee)),

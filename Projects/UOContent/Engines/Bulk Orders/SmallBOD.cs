@@ -1,5 +1,6 @@
 using System;
 using ModernUO.Serialization;
+using Server.Engines.Craft;
 using Server.Gumps;
 using Server.Items;
 using Server.Mobiles;
@@ -99,14 +100,21 @@ public abstract partial class SmallBOD : BaseBOD
     {
         return resource switch
         {
+            CraftResource.Rusty         => BulkMaterialType.Rusty,
+            CraftResource.OldCopper     => BulkMaterialType.OldCopper,
             CraftResource.DullCopper    => BulkMaterialType.DullCopper,
             CraftResource.ShadowIron    => BulkMaterialType.ShadowIron,
             CraftResource.Copper        => BulkMaterialType.Copper,
             CraftResource.Bronze        => BulkMaterialType.Bronze,
             CraftResource.Gold          => BulkMaterialType.Gold,
+            CraftResource.Rose          => BulkMaterialType.Rose,
             CraftResource.Agapite       => BulkMaterialType.Agapite,
+            CraftResource.Bloodrock     => BulkMaterialType.Bloodrock,
+            CraftResource.Silver        => BulkMaterialType.Silver,
             CraftResource.Verite        => BulkMaterialType.Verite,
             CraftResource.Valorite      => BulkMaterialType.Valorite,
+            CraftResource.Mytheril      => BulkMaterialType.Mytheril,
+            CraftResource.Blackrock     => BulkMaterialType.Blackrock,
             CraftResource.SpinedLeather => BulkMaterialType.Spined,
             CraftResource.HornedLeather => BulkMaterialType.Horned,
             CraftResource.BarbedLeather => BulkMaterialType.Barbed,
