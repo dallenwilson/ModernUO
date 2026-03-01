@@ -1,3 +1,10 @@
+This repo holds a customized version of ModernUO for the private shard 'Tarlokegrod'.
+
+It implements various tweaks, changes, and additions that may or may not be of interest to anyone else.
+
+An incomplete list in no particular order:
+- Adds the non-standard ores/ingots from the SphereServer emulator, including crafting/BOD/granite and elementals.
+
 <p align="center">
   <a href="https://muo.gg"><img alt="ModernUO - Ultima Online Server Emulator for the modern era!" src="https://cdn.muo.gg/gh/muo-logo.svg" width=128px /></a>
 </p>
