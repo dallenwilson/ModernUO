@@ -437,7 +437,7 @@ namespace Server.Multis
             TillerMan?.InvalidateProperties();
         }
 
-        private bool ShouldDecay => !IsMoving && Core.Now >= _timeOfDecay;
+        private bool ShouldDecay => !IsMoving && Core.Now >= _timeOfDecay && BaseHouse.DecayEnabled;
 
         public bool CheckDecay()
         {
