@@ -77,6 +77,9 @@ namespace Server.Spells.Chivalry
                                 );
                                 Effects.PlaySound(m, 0x201);
 
+                                if (bc is BaseFamiliar)
+                                    bc.DropBackpack();
+
                                 m.Delete();
                                 continue;
                             }

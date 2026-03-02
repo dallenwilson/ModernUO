@@ -64,7 +64,7 @@ public partial class HordeMinionFamiliar : BaseFamiliar
             return;
         }
 
-        m_NextPickup = Core.Now + TimeSpan.FromSeconds(Utility.RandomMinMax(5, 10));
+        m_NextPickup = Core.Now + TimeSpan.FromSeconds(Utility.RandomMinMax(2, 5));
 
         var pack = Backpack;
 
@@ -107,6 +107,21 @@ public partial class HordeMinionFamiliar : BaseFamiliar
         }
     }
 
+    public override void Dispel ( Mobile m )
+    {
+        Effects.SendLocationParticles(
+            EffectItem.Create(m.Location, m.Map, EffectItem.DefaultDuration),
+            0x3728,
+            8,
+            20,
+            5042
+        );
+        Effects.PlaySound(m, 0x201);
+
+        DropBackpack();
+        m.Delete();
+    }
+
     private void ConfirmRelease_Callback(Mobile from, bool okay)
     {
         if (okay)
@@ -117,6 +132,8 @@ public partial class HordeMinionFamiliar : BaseFamiliar
 
     public override void BeginRelease(Mobile from)
     {
+        // Surpress item loss warning, since pack contents drop to ground now.
+        /*
         if (Backpack?.Items.Count > 0)
         {
             from.SendGump(
@@ -127,6 +144,8 @@ public partial class HordeMinionFamiliar : BaseFamiliar
         {
             EndRelease(from);
         }
+        */
+        EndRelease(from);
     }
 
     public override bool OnBeforeDeath()
@@ -155,10 +174,12 @@ public partial class HordeMinionFamiliar : BaseFamiliar
 
     public override bool OnDragDrop(Mobile from, Item item)
     {
+        /*
         if (CheckFeed(from, item))
         {
             return true;
         }
+        */
 
         if (PackAnimal.CheckAccess(this, from))
         {

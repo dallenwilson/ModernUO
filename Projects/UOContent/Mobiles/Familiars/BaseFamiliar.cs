@@ -141,6 +141,7 @@ public abstract partial class BaseFamiliar : BaseCreature
                 0
             );
             PlaySound(0x201);
+            DropBackpack();
             Delete();
         }
     }

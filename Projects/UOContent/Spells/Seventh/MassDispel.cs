@@ -57,6 +57,9 @@ namespace Server.Spells.Seventh
                             );
                             Effects.PlaySound(bc, 0x201);
 
+                            if (bc is BaseFamiliar)
+                                bc.DropBackpack();
+
                             queue.Enqueue(bc);
                         }
                         else
