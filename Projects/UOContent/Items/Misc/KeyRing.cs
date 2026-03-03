@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using ModernUO.Serialization;
 using Server.Targeting;
+using Server.Multis;
 
 namespace Server.Items;
 
@@ -128,6 +129,31 @@ public partial class KeyRing : Item
 
         return false;
     }
+
+    public Key GetBoatKey()
+    {
+        foreach (var key in _keys)
+        {
+            if (key.Link is BaseBoat)
+                return key;
+        }
+
+        return null;
+    }
+
+    public int CountBoatKey()
+    {
+        var count = 0;
+
+        foreach (var key in _keys)
+        {
+            if (key.Link is BaseBoat)
+                count++;
+        }
+
+        return count;
+    }
+
 
     private void UpdateItemID()
     {
