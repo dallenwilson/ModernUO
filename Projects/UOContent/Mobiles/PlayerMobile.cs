@@ -1526,6 +1526,10 @@ namespace Server.Mobiles
             }
         }
 
+        [GeneratedEvent(nameof(PlayerLogoutEvent))]
+        public static partial void PlayerLogoutEvent(PlayerMobile pm);
+
+        [OnEvent(nameof(PlayerLogoutEvent))]
         private static void OnLogout(Mobile m)
         {
             (m as PlayerMobile)?.AutoStablePets();
