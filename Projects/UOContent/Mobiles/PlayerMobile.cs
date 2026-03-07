@@ -1205,8 +1205,9 @@ namespace Server.Mobiles
         public override int GetMinResistance(ResistanceType type)
         {
             var magicResist = (int)(Skills.MagicResist.Value * 10);
-            int min;
+            int min = MaxPlayerResistance * (int)(Skills.MagicResist.Value / 100.0);
 
+            /*
             if (magicResist >= 1000)
             {
                 min = 40 + (magicResist - 1000) / 50;
@@ -1219,6 +1220,7 @@ namespace Server.Mobiles
             {
                 min = int.MinValue;
             }
+            */
 
             return Math.Clamp(min, base.GetMinResistance(type), MaxPlayerResistance);
         }
