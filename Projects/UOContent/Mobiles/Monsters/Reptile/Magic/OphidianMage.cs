@@ -62,6 +62,7 @@ namespace Server.Mobiles
             AddLoot(LootPack.LowScrolls);
             AddLoot(LootPack.MedScrolls);
             AddLoot(LootPack.Potions);
+            AddLoot(LootPack.MagicalItems, 2);
         }
     }
 }

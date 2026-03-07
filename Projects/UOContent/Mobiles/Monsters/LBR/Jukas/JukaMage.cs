@@ -87,6 +87,7 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.Average, 2);
             AddLoot(LootPack.MedScrolls, 2);
+            AddLoot(LootPack.MagicalItems, 1);
         }
 
         public override int GetIdleSound() => 0x1AC;

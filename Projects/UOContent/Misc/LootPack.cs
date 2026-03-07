@@ -157,6 +157,20 @@ namespace Server
             }
         }
 
+        public static readonly LootPackItem[] BagsOfHolding = new LootPackItem[]
+        {
+            new LootPackItem( typeof( BagofWonder ), 40),
+            new LootPackItem( typeof( MysticBox ), 20),
+            new LootPackItem( typeof( SmallBagofHolding ), 10),
+            new LootPackItem( typeof( MediumBagofHolding ), 5),
+            new LootPackItem( typeof( LargeBagofHolding ), 1),
+        };
+
+        public static readonly LootPack MagicalItems = new LootPack( new LootPackEntry[]
+        {
+            new LootPackEntry( false, BagsOfHolding, 25.00, 1 )
+        } );
+
         public static readonly LootPackItem[] AosMagicItemsRichType1 =
         [
             new LootPackItem(typeof(BaseWeapon), 211),

@@ -69,6 +69,7 @@ namespace Server.Mobiles
             AddLoot(LootPack.Average);
             AddLoot(LootPack.Meager);
             AddLoot(LootPack.MedScrolls, 2);
+            AddLoot(LootPack.MagicalItems, 1);
         }
 
         [AfterDeserialization]

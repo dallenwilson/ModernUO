@@ -63,6 +63,7 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.Average);
             AddLoot(LootPack.LowScrolls);
+            AddLoot(LootPack.MagicalItems, 1);
         }
 
         public override bool IsEnemy(Mobile m) =>

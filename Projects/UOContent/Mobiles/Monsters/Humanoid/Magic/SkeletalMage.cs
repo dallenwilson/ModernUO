@@ -59,6 +59,7 @@ namespace Server.Mobiles
             AddLoot(LootPack.Average);
             AddLoot(LootPack.LowScrolls);
             AddLoot(LootPack.Potions);
+            AddLoot(LootPack.MagicalItems, 1);
         }
     }
 }

@@ -60,6 +60,7 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.Rich);
             AddLoot(LootPack.LowScrolls);
+            AddLoot(LootPack.MagicalItems, 1);
         }
     }
 }
