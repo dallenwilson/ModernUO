@@ -935,6 +935,7 @@ public partial class NetState : IComparable<NetState>, IValueLinkListNode<NetSta
             return;
         }
 
+        /*
         if (_socket.DisconnectPending)
         {
             LogInfo("Force disconnecting stuck socket...");
@@ -953,6 +954,7 @@ public partial class NetState : IComparable<NetState>, IValueLinkListNode<NetSta
             LogInfo("Disconnecting due to inactivity...");
             Disconnect("Disconnecting due to inactivity.");
         }
+        */
     }
 
     public void Trace(ReadOnlySpan<byte> buffer)
