@@ -271,7 +271,7 @@ public class AnimateDeadSpell : NecromancerSpell, ITargetingSpell<Item>
 
         list.Add(summoned);
 
-        if (list.Count > 3)
+        if (list.Count > (int)Math.Floor(master.Skills.Necromancy.Value / 20))
         {
             var toKill = list[0];
             Unregister(master, toKill);
@@ -381,6 +381,13 @@ public class AnimateDeadSpell : NecromancerSpell, ITargetingSpell<Item>
         corpse.Animated = true;
 
         Register(caster, summoned);
+
+        BaseCreature m = summoned as BaseCreature;
+        if (m != null)
+        {
+            m.ControlOrder = OrderType.Guard;
+            m.SetSpeed(0.25, 0.5);
+        }
     }
 
     public static void Scale(BaseCreature bc, int scalar)

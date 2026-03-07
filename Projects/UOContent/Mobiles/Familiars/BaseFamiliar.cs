@@ -12,12 +12,12 @@ public abstract partial class BaseFamiliar : BaseCreature
 
     public BaseFamiliar() : base(AIType.AI_Melee)
     {
-        SetSpeed(0.1, 0.11);
+        SetSpeed(0.25, 0.5);
     }
 
     public override bool BardImmune => true;
     public override Poison PoisonImmune => Poison.Lethal;
-    public override bool Commandable => false;
+    public override bool Commandable => true;
     public override bool IgnoreMobiles => true;
 
     public override bool PlayerRangeSensitive => false;
@@ -71,6 +71,14 @@ public abstract partial class BaseFamiliar : BaseCreature
 
     public override void OnThink()
     {
+        if ((ControlOrder != OrderType.Guard) && !(this is HordeMinion))
+        {
+            ControlOrder = OrderType.Guard;
+            SetSpeed(0.25, 0.5);
+        }
+
+        base.OnThink();
+
         var master = ControlMaster;
 
         if (Deleted)
@@ -92,6 +100,7 @@ public abstract partial class BaseFamiliar : BaseCreature
             Hidden = m_LastHidden = master.Hidden;
         }
 
+        /*
         if (AIObject?.WalkMobileRange(master, 5, false, 1, 1) == true)
         {
             Warmode = master.Warmode;
@@ -106,11 +115,12 @@ public abstract partial class BaseFamiliar : BaseCreature
 
             CurrentSpeed = 0.01;
         }
+        */
     }
 
     public override void GetContextMenuEntries(Mobile from, ref PooledRefList<ContextMenuEntry> list)
     {
-        base.GetContextMenuEntries(from, ref list);
+        //base.GetContextMenuEntries(from, ref list);
 
         if (from.Alive && Controlled && from == ControlMaster && from.InRange(this, 14))
         {

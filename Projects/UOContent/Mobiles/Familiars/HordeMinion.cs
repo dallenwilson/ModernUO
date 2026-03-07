@@ -57,6 +57,11 @@ public partial class HordeMinionFamiliar : BaseFamiliar
 
     public override void OnThink()
     {
+        if (ControlOrder != OrderType.Follow)
+        {
+            ControlOrder = OrderType.Follow;
+            SetSpeed(0.25, 0.5);
+        }
         base.OnThink();
 
         if (Core.Now < m_NextPickup)
@@ -132,7 +137,7 @@ public partial class HordeMinionFamiliar : BaseFamiliar
 
     public override void BeginRelease(Mobile from)
     {
-        // Surpress item loss warning, since pack contents drop to ground now.
+        // Suppress item loss warning, since pack contents drop to ground now.
         /*
         if (Backpack?.Items.Count > 0)
         {
