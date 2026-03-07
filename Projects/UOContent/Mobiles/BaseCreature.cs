@@ -1707,53 +1707,29 @@ namespace Server.Mobiles
                 {
                     var holding = from.Weapon as Item;
 
-                    if (Core.AOS && holding is SkinningKnife)
+                    if (Core.AOS && with is SkinningKnife)
                     {
-                        var leather = HideType switch
+                        switch (HideType)
                         {
-                            HideType.Regular => (Item)new Leather(hides),
-                            HideType.Spined  => new SpinedLeather(hides),
-                            HideType.Horned  => new HornedLeather(hides),
-                            HideType.Barbed  => new BarbedLeather(hides),
-                            _                => null
+                            case HideType.Regular: corpse.DropItem(new Leather(hides));       break;
+                            case HideType.Spined:  corpse.DropItem(new SpinedLeather(hides)); break;
+                            case HideType.Horned:  corpse.DropItem(new HornedLeather(hides)); break;
+                            case HideType.Barbed:  corpse.DropItem(new BarbedLeather(hides)); break;
+                            default:               corpse.DropItem(new Leather(hides));       break;
                         };
-
-                        if (leather != null)
-                        {
-                            if (!from.PlaceInBackpack(leather))
-                            {
-                                corpse.DropItem(leather);
-                                from.SendLocalizedMessage(500471); // You skin it, and the hides are now in the corpse.
-                            }
-                            else
-                            {
-                                from.SendLocalizedMessage(
-                                    1073555
-                                ); // You skin it and place the cut-up hides in your backpack.
-                            }
-                        }
                     }
                     else
                     {
-                        if (HideType == HideType.Regular)
+                        switch (HideType)
                         {
-                            corpse.DropItem(new Hides(hides));
-                        }
-                        else if (HideType == HideType.Spined)
-                        {
-                            corpse.DropItem(new SpinedHides(hides));
-                        }
-                        else if (HideType == HideType.Horned)
-                        {
-                            corpse.DropItem(new HornedHides(hides));
-                        }
-                        else if (HideType == HideType.Barbed)
-                        {
-                            corpse.DropItem(new BarbedHides(hides));
-                        }
-
-                        from.SendLocalizedMessage(500471); // You skin it, and the hides are now in the corpse.
+                            case HideType.Regular: corpse.DropItem(new Hides(hides));       break;
+                            case HideType.Spined:  corpse.DropItem(new SpinedHides(hides)); break;
+                            case HideType.Horned:  corpse.DropItem(new HornedHides(hides)); break;
+                            case HideType.Barbed:  corpse.DropItem(new BarbedHides(hides)); break;
+                            default:               corpse.DropItem(new Hides(hides));       break;
+                        };
                     }
+                    from.SendLocalizedMessage(500471); // You skin it, and the hides are now in the corpse.
                 }
 
                 if (scales != 0)
