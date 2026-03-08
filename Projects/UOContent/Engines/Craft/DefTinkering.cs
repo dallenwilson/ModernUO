@@ -236,6 +236,14 @@ public class DefTinkering : CraftSystem
         AddCraft(typeof(Axle), 1044042, 1024187, -25.0, 25.0, typeof(Log), 1044041, 2, 1044351);
         AddCraft(typeof(RollingPin), 1044042, 1024163, 0.0, 50.0, typeof(Log), 1044041, 5, 1044351);
 
+        if (Core.SA)
+        {
+            index = AddCraft(typeof(GargishNecklace), 1044049, 1095784, 60.0, 110.0, typeof(IronIngot), 1044036, 3, 1044037);
+            index = AddCraft(typeof(GargishBracelet), 1044049, 1095785, 55.0, 105.0, typeof(IronIngot), 1044036, 3, 1044037);
+            index = AddCraft(typeof(GargishRing), 1044049, 1095786, 65.0, 115.0, typeof(IronIngot), 1044036, 3, 1044037);
+            index = AddCraft(typeof(GargishEarrings), 1044049, 1095787, 55.0, 105.0, typeof(IronIngot), 1044036, 3, 1044037);
+        }
+
         if (Core.SE)
         {
             index = AddCraft(typeof(Nunchaku), 1044042, 1030158, 70.0, 120.0, typeof(IronIngot), 1044036, 3, 1044037);
