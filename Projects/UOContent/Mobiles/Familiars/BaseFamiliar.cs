@@ -71,12 +71,6 @@ public abstract partial class BaseFamiliar : BaseCreature
 
     public override void OnThink()
     {
-        if ((ControlOrder != OrderType.Guard) && !(this is HordeMinion))
-        {
-            ControlOrder = OrderType.Guard;
-            SetSpeed(0.25, 0.5);
-        }
-
         base.OnThink();
 
         var master = ControlMaster;
@@ -100,22 +94,20 @@ public abstract partial class BaseFamiliar : BaseCreature
             Hidden = m_LastHidden = master.Hidden;
         }
 
-        /*
         if (AIObject?.WalkMobileRange(master, 5, false, 1, 1) == true)
         {
             Warmode = master.Warmode;
             Combatant = master.Combatant;
 
-            CurrentSpeed = 0.1;
+            CurrentSpeed = 0.25;
         }
         else
         {
             Warmode = false;
             FocusMob = Combatant = null;
 
-            CurrentSpeed = 0.01;
+            CurrentSpeed = 0.5;
         }
-        */
     }
 
     public override void GetContextMenuEntries(Mobile from, ref PooledRefList<ContextMenuEntry> list)

@@ -385,8 +385,7 @@ public class AnimateDeadSpell : NecromancerSpell, ITargetingSpell<Item>
         BaseCreature m = summoned as BaseCreature;
         if (m != null)
         {
-            m.ControlOrder = OrderType.Guard;
-            m.SetSpeed(0.25, 0.5);
+            m.SetSpeed(0.25, 0.25);
         }
     }
 
