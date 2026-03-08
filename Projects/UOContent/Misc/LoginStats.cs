@@ -18,7 +18,8 @@ namespace Server.Misc
                 $"online, with {itemCount} item{(itemCount == 1 ? "" : "s")} and {mobileCount} mobile{(mobileCount == 1 ? "" : "s")} in the world."
             );
 
-            World.Broadcast( 0x35, true,$"{pm.Name} has Logged In. There {(userCount == 1 ? "is" : "are")} now {userCount} user{(userCount == 1 ? "" : "s")} online.");
+            if (pm.AccessLevel == AccessLevel.Player)
+                World.Broadcast( 0x35, true,$"{pm.Name} has Logged In. There {(userCount == 1 ? "is" : "are")} now {userCount} user{(userCount == 1 ? "" : "s")} online.");
         }
 
         [OnEvent(nameof(PlayerMobile.PlayerLogoutEvent))]
@@ -28,7 +29,8 @@ namespace Server.Misc
             var itemCount = World.Items.Count;
             var mobileCount = World.Mobiles.Count;
 
-            World.Broadcast( 0x35, true,$"{pm.Name} has Logged Out. There {(userCount == 1 ? "is" : "are")} now {userCount} user{(userCount == 1 ? "" : "s")} online.");
+            if (pm.AccessLevel == AccessLevel.Player)
+                World.Broadcast( 0x35, true,$"{pm.Name} has Logged Out. There {(userCount == 1 ? "is" : "are")} now {userCount} user{(userCount == 1 ? "" : "s")} online.");
         }
 
     }
