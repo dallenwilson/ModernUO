@@ -1546,6 +1546,10 @@ public abstract partial class BaseWeapon
         {
             return false;
         }
+        if (defender.Weapon is Fists or BaseRanged)
+        {
+            return false;
+        }
 
         var shield = defender.FindItemOnLayer<BaseShield>(Layer.TwoHanded);
 
@@ -1580,16 +1584,13 @@ public abstract partial class BaseWeapon
             return defender.CheckSkill(SkillName.Parry, chance);
         }
 
-        if (defender.Weapon is Fists or BaseRanged)
-        {
-            return false;
-        }
-
         var weapon = defender.Weapon as BaseWeapon;
 
         var divisor = weapon?.Layer == Layer.OneHanded ? 48000.0 : 41140.0;
 
-        chance = parry * bushido / divisor;
+        // No Bushido here currently, but parry with a weapon is a real thing and I like it.
+        //chance = parry * bushido / divisor;
+        chance = parry * 100 / divisor;
 
         var aosChance = parry / 800.0;
 
