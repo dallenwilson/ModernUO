@@ -572,14 +572,21 @@ public class DefTinkering : CraftSystem
         // Add every material you want the player to be able to choose from
         // This will override the overridable material
         AddSubRes(typeof(IronIngot), 1044022, 00.0, 1044036, 1044267);
+        AddSubRes(typeof(RustyIngot), "RUSTY", 50.0, 1044036, 1044268);
+        AddSubRes(typeof(OldCopperIngot), "OLD COPPER", 60.0, 1044036, 1044268);
         AddSubRes(typeof(DullCopperIngot), 1044023, 65.0, 1044036, 1044268);
         AddSubRes(typeof(ShadowIronIngot), 1044024, 70.0, 1044036, 1044268);
         AddSubRes(typeof(CopperIngot), 1044025, 75.0, 1044036, 1044268);
         AddSubRes(typeof(BronzeIngot), 1044026, 80.0, 1044036, 1044268);
         AddSubRes(typeof(GoldIngot), 1044027, 85.0, 1044036, 1044268);
+        AddSubRes(typeof(RoseIngot), "ROSE", 87.0, 1044036, 1044268);
         AddSubRes(typeof(AgapiteIngot), 1044028, 90.0, 1044036, 1044268);
+        AddSubRes(typeof(BloodrockIngot), "BLOODROCK", 93.0, 1044036, 1044268);
+        AddSubRes(typeof(SilverIngot), "SILVER", 95.0, 1044036, 1044268);
         AddSubRes(typeof(VeriteIngot), 1044029, 95.0, 1044036, 1044268);
         AddSubRes(typeof(ValoriteIngot), 1044030, 99.0, 1044036, 1044268);
+        AddSubRes(typeof(MytherilIngot), "MYTHERIL", 99.5, 1044036, 1044268);
+        AddSubRes(typeof(BlackrockIngot), "BLACKROCK", 100.0, 1044036, 1044268);
 
         MarkOption = true;
         Repair = true;
