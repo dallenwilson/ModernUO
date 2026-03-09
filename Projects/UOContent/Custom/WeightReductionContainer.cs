@@ -74,6 +74,7 @@ namespace Server.Items
 
         // Limit the maximum items
         public override int ContainerMaxItems { get { return 10; } }
+        public override TimeSpan AccessDelay { get { return TimeSpan.Zero; } }
 
         // Setup access messages to provide a roleplaying experience
         public override string AccessDelayMessage { get { return "The rift in the nether that separates the dimensions has that stabilized yet."; } }
