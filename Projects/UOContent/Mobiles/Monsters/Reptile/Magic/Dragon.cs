@@ -65,6 +65,7 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.FilthyRich, 2);
             AddLoot(LootPack.Gems, 8);
+            AddLoot(LootPack.HighScrolls, 1);
         }
     }
 }

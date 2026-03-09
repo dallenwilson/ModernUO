@@ -62,8 +62,12 @@ namespace Server.Mobiles
         public override void GenerateLoot()
         {
             AddLoot(LootPack.FilthyRich);
-            AddLoot(LootPack.MedScrolls, 2);
+            AddLoot(LootPack.LowNecroScrolls, 3);
+            AddLoot(LootPack.MedNecroScrolls, 2);
             AddLoot(LootPack.MagicalItems, 3);
+            AddLoot(LootPack.HighScrolls, 1);
+            AddLoot(LootPack.HighNecroScrolls, 2);
+
         }
     }
 }

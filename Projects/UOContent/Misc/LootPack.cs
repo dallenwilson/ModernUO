@@ -171,6 +171,50 @@ namespace Server
             new LootPackEntry( false, BagsOfHolding, 25.00, 1 )
         } );
 
+        private static readonly LootPackItem[] LowNecroScroll = new LootPackItem[]
+        {
+            new LootPackItem(typeof(AnimateDeadScroll), 10),
+            new LootPackItem(typeof(BloodOathScroll), 10),
+            new LootPackItem(typeof(CorpseSkinScroll), 10),
+            new LootPackItem(typeof(CurseWeaponScroll), 10),
+            new LootPackItem(typeof(EvilOmenScroll), 10),
+            new LootPackItem(typeof(HorrificBeastScroll), 10),
+            new LootPackItem(typeof(MindRotScroll), 10),
+            new LootPackItem(typeof(PainSpikeScroll), 10),
+            new LootPackItem(typeof(SummonFamiliarScroll), 10),
+            new LootPackItem(typeof(WraithFormScroll), 10),
+        };
+
+        public static readonly LootPack LowNecroScrolls = new LootPack( new LootPackEntry[]
+        {
+            new LootPackEntry( false, LowNecroScroll, 100.00, 1 )
+        } );
+
+        private static readonly LootPackItem[] MedNecroScroll = new LootPackItem[]
+        {
+            new LootPackItem(typeof(LichFormScroll), 25),
+            new LootPackItem(typeof(PoisonStrikeScroll), 25),
+            new LootPackItem(typeof(StrangleScroll), 25),
+            new LootPackItem(typeof(WitherScroll), 25),
+        };
+
+        public static readonly LootPack MedNecroScrolls = new LootPack( new LootPackEntry[]
+        {
+            new LootPackEntry( false, MedNecroScroll, 100.00, 1 )
+        } );
+
+        private static readonly LootPackItem[] HighNecroScroll = new LootPackItem[]
+        {
+            new LootPackItem(typeof(VengefulSpiritScroll), 33),
+            new LootPackItem(typeof(VampiricEmbraceScroll), 33),
+            new LootPackItem(typeof(ExorcismScroll), 33)
+        };
+
+        public static readonly LootPack HighNecroScrolls = new LootPack( new LootPackEntry[]
+        {
+            new LootPackEntry( false, HighNecroScroll, 100.00, 1 )
+        } );
+
         public static readonly LootPackItem[] AosMagicItemsRichType1 =
         [
             new LootPackItem(typeof(BaseWeapon), 211),

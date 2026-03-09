@@ -700,7 +700,7 @@ namespace Server
                 _                         => RegularScrollTypes
             };
 
-            return Construct<SpellScroll>(types, Utility.RandomMinMax(minIndex, maxIndex));
+            return Construct<SpellScroll>(types, Utility.RandomMinMax(minIndex, Math.Max((types.Length - 1), maxIndex)));
         }
 
         public static BaseBook RandomGrimmochJournal() => Construct<BaseBook>(GrimmochJournalTypes);

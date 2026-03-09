@@ -54,7 +54,7 @@ namespace Server.Mobiles
         public override int TreasureMapLevel => 4;
 
         public override int Meat => 1;
-        
+
         public override bool CanFly => true;
 
         public override void GenerateLoot()
@@ -62,6 +62,7 @@ namespace Server.Mobiles
             AddLoot(LootPack.Rich);
             AddLoot(LootPack.Average, 2);
             AddLoot(LootPack.MedScrolls, 2);
+            AddLoot(LootPack.HighScrolls, 1);
         }
     }
 }
