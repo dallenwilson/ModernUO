@@ -21,7 +21,7 @@ public partial class SpellScroll : Item, ICommodity
         _spellID = spellID;
     }
 
-    public override double DefaultWeight => 1.0;
+    public override double DefaultWeight => 0.2;
 
     int ICommodity.DescriptionNumber => LabelNumber;
     bool ICommodity.IsDeedable => Core.ML;

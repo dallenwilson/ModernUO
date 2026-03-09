@@ -47,6 +47,8 @@ public abstract partial class BaseJewel : Item, ICraftable, IAosItem
     [SerializedCommandProperty(AccessLevel.GameMaster, canModify: true)]
     private AosSkillBonuses _skillBonuses;
 
+    public override double DefaultWeight => 0.1;
+
     public BaseJewel(int itemID, Layer layer) : base(itemID)
     {
         _attributes = new AosAttributes(this);
