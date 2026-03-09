@@ -113,7 +113,12 @@ namespace Server.Items
             {
                 if (targeted is Item item)
                 {
-                    if (item.QuestItem)
+                    if (from.AccessLevel >= AccessLevel.GameMaster)
+                    {
+                        item.Hue = m_Tub.DyedHue;
+                        from.SendMessage(0,"Your power permits this action despite any of the usual restrictions.");
+                    }
+                    else if (item.QuestItem)
                     {
                         from.SendLocalizedMessage(1151836); // You may not dye toggled quest items.
                     }
