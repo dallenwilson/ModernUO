@@ -4,6 +4,7 @@ using ModernUO.CodeGeneratedEvents;
 using Server.Engines.Quests.Necro;
 using Server.Items;
 using Server.Mobiles;
+using Server.Gumps;
 
 namespace Server.Spells.Necromancy;
 
@@ -138,7 +139,30 @@ public class AnimateDeadSpell : NecromancerSpell, ITargetingSpell<Item>
         {
             var type = c.Owner?.GetType();
 
-            if (c.ItemID != 0x2006 || c.Animated || type == typeof(PlayerMobile) || type == null ||
+            if (type == typeof(PlayerMobile))
+            {
+                // Same skill req as Chivalry res spell
+                if (Caster.Skills.Necromancy.Value < 65.0)
+                {
+                    Caster.SendMessage(0, "You lack the skill to reanimate that.");
+                }
+                else if (c.Owner.Alive)
+                {
+                    Caster.SendMessage(0, "You cannot locate a spirit to inhabit that vessel.");
+                }
+                else
+                {
+                    SpellHelper.Turn(Caster, c);
+
+                    c.Owner.PlaySound(0x214);
+                    c.Owner.FixedEffect(0x376A, 10, 16);
+
+                    c.Owner.SendGump(new ResurrectGump(Caster));
+                    c.Owner.Location = c.Location;
+                }
+
+            }
+            else if (c.ItemID != 0x2006 || c.Animated || type == typeof(PlayerMobile) || type == null ||
                 c.Owner?.Fame < 100 ||
                 c.Owner is BaseCreature creature && (creature.Summoned || creature.IsBonded))
             {
