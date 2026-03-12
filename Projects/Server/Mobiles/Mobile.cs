@@ -428,7 +428,7 @@ public partial class Mobile : IHued, IComparable<Mobile>, ISpawnable, IObjectPro
     [CommandProperty(AccessLevel.Counselor)]
     public virtual int EnergyResistance => GetResistance(ResistanceType.Energy);
 
-    public static int MaxPlayerResistance { get; set; } = 70;
+    public static int MaxPlayerResistance { get; set; } = 80;
 
     public virtual bool NewGuildDisplay => false;
 
